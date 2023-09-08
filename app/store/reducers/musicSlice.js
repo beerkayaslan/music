@@ -12,7 +12,7 @@ const initialState = {
   error: null,
   data: [],
   currentSong: null,
-  favList: []
+  favList: localStorage.getItem("favourites") === null ? [] :  JSON.parse(localStorage.getItem("favourites"))
 }
 
 export const musicSlice = createSlice({
@@ -25,9 +25,14 @@ export const musicSlice = createSlice({
     setFavouriteSong: (state, action) => {
       const isOld = state.favList.map((item) => item.id).includes(action.payload.id);
       if (isOld) {
-        state.favList = state.favList.filter(e => e.id !== action.payload.id);
+        const data = state.favList.filter(e => e.id !== action.payload.id);
+        state.favList = data;
+        localStorage.setItem("favourites", JSON.stringify(data));
+
       } else {
-        state.favList = [...state.favList, action.payload];
+        const data = [...state.favList, action.payload];
+        state.favList = data;
+        localStorage.setItem("favourites", JSON.stringify(data));
       }
     }
   },

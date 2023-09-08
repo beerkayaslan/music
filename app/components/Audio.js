@@ -38,7 +38,7 @@ export default function Audio() {
         </div>
         <div className='cursor-pointer heart-btn' onClick={handleFavouriteClick}>
           {
-            favList.length > 0 ?  (favList.some(item => item.id === currentSong.id) ?  <FaHeart size={20} color='#b91c1c'  /> : <FaRegHeart  size={20}  />): <FaRegHeart  size={20}  />
+            favList.length > 0 ? (favList.some(item => item.id === currentSong.id) ? <FaHeart size={20} color='#b91c1c' /> : <FaRegHeart size={20} />) : <FaRegHeart size={20} />
           }
         </div>
       </div>
