@@ -12,7 +12,7 @@ const initialState = {
   error: null,
   data: [],
   currentSong: null,
-  favList: localStorage.getItem("favourites") === null ? [] :  JSON.parse(localStorage.getItem("favourites"))
+  favList: typeof window !== 'undefined' ? localStorage.getItem("favourites") === null ? [] :  JSON.parse(localStorage.getItem("favourites")) : []
 }
 
 export const musicSlice = createSlice({
