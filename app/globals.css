@@ -16,12 +16,119 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+nav{
+  @apply bg-slate-50 border-r shadow  flex-col w-60 fixed left-0 top-0 h-full hidden md:flex
+}
+
+html{
+  @apply h-full
+}
+
+body{
+  @apply h-full
+}
+
+.logo{
+  @apply  p-6 font-semibold text-4xl select-none
+}
+
+.menu{
+  @apply p-4 flex flex-col gap-3
+}
+
+.menu-item{
+  @apply px-3 py-2 hover:bg-indigo-100 transition rounded flex gap-3 items-center
+}
+.menu-item.active{
+  @apply bg-indigo-100 font-semibold
+}
+
+main{
+  @apply  md:pl-60 pt-20 md:pb-24
+}
+
+header{
+  @apply fixed right-0 top-0 md:w-[calc(100%-15rem)] w-full flex items-center justify-between h-20 px-5 bg-white  border-b z-10
+}
+
+header .search {
+  @apply relative;
+}
+
+header .search input{
+ @apply block w-96 rounded-md border-0 pl-11 h-11 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 transition 
+}
+
+header .right-info{
+  @apply h-11 w-11 border rounded-full flex items-center justify-center cursor-pointer bg-slate-50
+}
+
+.song-card-list{
+  @apply grid gap-4 p-4 lg:grid-cols-5 md:grid-cols-3 2xl:grid-cols-7 xl:grid-cols-6 grid-cols-2
+}
+
+.song-card{
+  @apply  cursor-pointer rounded p-3 bg-gray-50  relative transition border border-gray-100 select-none shadow flex flex-col 
+}
+
+.song-card img{
+  @apply rounded select-none m-auto
+}
+
+.song-card p{
+  @apply mt-2 font-semibold text-lg 
+}
+
+.song-card span{
+  @apply text-xs
+}
+
+.song-card .play-icon{
+  @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-indigo-400 w-16 h-16 rounded-full flex items-center justify-center opacity-0 select-none pointer-events-none transition
+}
+
+.song-card:hover .play-icon{
+  @apply opacity-100
+}
+
+.song-card:hover{
+  @apply bg-gray-200
+}
+.song-card:active {
+  @apply scale-[.98]
+}
+.heart-btn{
+  @apply transition
+}
+
+.heart-btn:active{
+  @apply scale-75
+}
+
+.song-card:active .play-icon{
+  @apply bg-indigo-500
+}
+
+.audio{
+  @apply md:w-[calc(100%-15rem)] w-full h-40 md:h-24 flex bottom-0 right-0 z-20 fixed bg-white border-t pl-4 flex-col md:flex-row
+}
+
+.song-card .pause-icon-svg{
+  @apply hidden
+}
+
+.song-card.active .pause-icon-svg{
+  @apply block
+}
+
+.song-card.active .play-icon-svg{
+  @apply hidden
+}
+
+.song-card.active{
+  @apply border bg-indigo-50 border-indigo-100
+}
+
+.rhap_progress-filled{
+  @apply bg-indigo-500
 }
