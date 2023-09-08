@@ -2,8 +2,6 @@
 
 import Link from "next/link"
 import { FaMusic, FaHeart, FaClock } from 'react-icons/fa';
-import { MdLibraryMusic } from "react-icons/md";
-import { BiSolidMicrophoneAlt } from "react-icons/bi";
 import { usePathname } from "next/navigation";
 
 export default function Nav() {
